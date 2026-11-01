@@ -1,0 +1,23 @@
+CS4243 Lab 2 - Student Release
+Due: 8 November 2026, 23:59
+
+1. Extract the entire ZIP. Keep code/ and data/ beside each other.
+2. Read CS4243_Lab_2.pdf, then code/README.md for setup and exact commands.
+3. Use Python 3.11. Open a terminal inside code/ and install requirements.txt.
+4. Work through Notebooks 1-3, implementing the 23 assessed functions.
+   The initial starter state is 37 passing tests and 45 NotImplementedError
+   errors out of 82 tests. Those missing implementations are intentional.
+5. Freeze validation choices before test/stress reporting. Finish Notebook 3
+   before running the eight final videos and building the three stress tables.
+6. Follow Stage 4 and Notebook 4 for your own clip and generative comparison.
+   Inference scripts are allowed; the generative edit must generate pixels.
+7. Submit code/ and only your own data/ files, as listed in code/README.md.
+   Leave the supplied dataset, model weights, caches and preview WEBMs out.
+
+Included data: common clip; five stress clips; supplementary rotation clip;
+poster reference; ad.png; annotation manifests and masks; and the documented
+staff generative example under data/genai_oracle/.
+
+The 23 assessed functions are unimplemented. The notebooks have no saved
+outputs. The supplied generative example is the reference described in the
+handout; it does not implement the assessed pipeline.

@@ -1,0 +1,358 @@
+{
+  "common_clip": {
+    "file": "data/common_clip/board_clip.mp4",
+    "frames": 500,
+    "fps": 30,
+    "width": 1280,
+    "height": 720,
+    "duration_s": 16.666666666666668,
+    "board_reference": "data/common_clip/board_reference.png",
+    "board_reference_size": [
+      396,
+      330
+    ],
+    "board_aspect": 1.2,
+    "board_reference_frame": 294,
+    "board_fraction_of_frame": {
+      "min": 0.0834,
+      "median": 0.1311,
+      "max": 0.179
+    },
+    "annotated_corner_frames": 26,
+    "corner_stride": 16,
+    "validation_corner_frames": 13,
+    "test_corner_frames": 13,
+    "occlusion_masks": 6,
+    "mask_frames": [
+      96,
+      144,
+      192,
+      208,
+      272,
+      448
+    ],
+    "events": {
+      "occlusion": [
+        [
+          10,
+          24
+        ],
+        [
+          56,
+          76
+        ],
+        [
+          94,
+          106
+        ],
+        [
+          140,
+          152
+        ],
+        [
+          186,
+          212
+        ],
+        [
+          258,
+          278
+        ],
+        [
+          298,
+          308
+        ],
+        [
+          342,
+          356
+        ],
+        [
+          382,
+          396
+        ],
+        [
+          446,
+          458
+        ],
+        [
+          494,
+          498
+        ]
+      ],
+      "pan": "continuous hand-held",
+      "occluder": "blue card"
+    },
+    "provenance": "POT-280 object V27 (Coke), video V27_5 (occlusion), POT frames 1-500 re-encoded; corners from the POT annotation, masks chroma-keyed from the blue card and checked by hand. Liang et al., Planar Object Tracking Benchmark in the Wild, Neurocomputing 2021. https://liangp.github.io/data/pot280/"
+  },
+  "artwork": {
+    "ad": "data/artwork/ad.png",
+    "size": [
+      1200,
+      1000
+    ],
+    "note": "the single supplied replacement artwork (staff drawing 'Nailong drinks Niulai cola', no third-party brand), 6:5 like the poster; students add their own artwork for Stage 4 as data/artwork/<name>.png"
+  },
+  "factors": {
+    "common_clip": "common",
+    "coke_perspective": "viewpoint",
+    "coke_scale": "scale",
+    "coke_blur": "blur",
+    "coke_out_of_view": "exit",
+    "coke_unconstrained": "combined",
+    "coke_rotation": "rotation"
+  },
+  "stress_clips": {
+    "1": {
+      "viewpoint": "coke_perspective",
+      "scale": "coke_scale"
+    },
+    "2": {
+      "blur": "coke_blur",
+      "exit": "coke_out_of_view"
+    },
+    "3": {
+      "viewpoint": "coke_perspective",
+      "combined": "coke_unconstrained"
+    }
+  },
+  "stress_tables": {
+    "variant": "flow_assisted",
+    "common_clip_variants": [
+      "independent",
+      "flow_assisted"
+    ],
+    "baseline": "common_clip_flow_assisted_no_occlusion",
+    "output": "outputs/stress_tables.md",
+    "note": "python -m overlaylab.report builds the three Stage tables from outputs/videos, outputs/evaluation and the frozen thresholds"
+  },
+  "genai": {
+    "mode": "personal_clip_frames",
+    "one_model_per_submission": true,
+    "model": "open-weight video model",
+    "oracle": "data/genai_oracle/ (MiniMax-H3, common clip)",
+    "input": "whole clip; cut it (shorter interval or joined segments) if the model does not accept it",
+    "runs": 1
+  },
+  "diagnostic_clips": {
+    "coke_scale": {
+      "file": "data/diagnostic/coke_scale/clip.mp4",
+      "source": "POT-280 V27_1",
+      "frames": 500,
+      "annotated_corner_frames": 32,
+      "dropped_flagged_frames": [],
+      "board_fraction_of_frame": {
+        "min": 0.0221,
+        "median": 0.0401,
+        "max": 0.2705
+      },
+      "factor": "scale",
+      "stages": [
+        1
+      ],
+      "geometry": {
+        "scale_range": [
+          0.285,
+          1.001
+        ],
+        "in_plane_rotation_deg": [
+          -7.2,
+          0.7
+        ],
+        "max_keystone": 1.058,
+        "max_affine_residual": 0.0155,
+        "max_affine_residual_frame": 406
+      },
+      "question": "Stage 1 stress clip (scale): the camera approaches and retreats; the descriptor is not scale invariant (Question 1)",
+      "mask_frames": []
+    },
+    "coke_rotation": {
+      "file": "data/diagnostic/coke_rotation/clip.mp4",
+      "source": "POT-280 V27_2",
+      "frames": 500,
+      "annotated_corner_frames": 32,
+      "dropped_flagged_frames": [],
+      "board_fraction_of_frame": {
+        "min": 0.0955,
+        "median": 0.1094,
+        "max": 0.1221
+      },
+      "factor": "rotation",
+      "stages": [],
+      "geometry": {
+        "scale_range": [
+          0.941,
+          1.066
+        ],
+        "in_plane_rotation_deg": [
+          -131.6,
+          179.9
+        ],
+        "max_keystone": 1.075,
+        "max_affine_residual": 0.013,
+        "max_affine_residual_frame": 136
+      },
+      "question": "supplementary: in-plane rotation only (absorbed by the dominant orientation); not in the stress tables",
+      "mask_frames": []
+    },
+    "coke_perspective": {
+      "file": "data/diagnostic/coke_perspective/clip.mp4",
+      "source": "POT-280 V27_3",
+      "frames": 500,
+      "annotated_corner_frames": 32,
+      "dropped_flagged_frames": [],
+      "board_fraction_of_frame": {
+        "min": 0.0832,
+        "median": 0.2188,
+        "max": 0.2763
+      },
+      "factor": "viewpoint",
+      "stages": [
+        1,
+        3
+      ],
+      "geometry": {
+        "scale_range": [
+          0.584,
+          1.067
+        ],
+        "in_plane_rotation_deg": [
+          -21.0,
+          36.5
+        ],
+        "max_keystone": 1.586,
+        "max_affine_residual": 0.0976,
+        "max_affine_residual_frame": 286
+      },
+      "question": "Stage 1 stress clip (viewpoint): the camera orbits the poster, affine vs homography and parallax (Question 2); Stage 3 stress clip: three empty masks, the false-occlusion test (Question 4)",
+      "mask_frames": [
+        128,
+        224,
+        288
+      ]
+    },
+    "coke_blur": {
+      "file": "data/diagnostic/coke_blur/clip.mp4",
+      "source": "POT-280 V27_4",
+      "frames": 500,
+      "annotated_corner_frames": 32,
+      "dropped_flagged_frames": [],
+      "board_fraction_of_frame": {
+        "min": 0.0159,
+        "median": 0.1108,
+        "max": 0.1565
+      },
+      "factor": "blur",
+      "stages": [
+        2
+      ],
+      "geometry": {
+        "scale_range": [
+          0.81,
+          1.173
+        ],
+        "in_plane_rotation_deg": [
+          -18.3,
+          8.5
+        ],
+        "max_keystone": 1.16,
+        "max_affine_residual": 0.0242,
+        "max_affine_residual_frame": 74
+      },
+      "question": "Stage 2 stress clip (blur): motion blur violates brightness constancy; aperture problem on the board edges (Question 3)",
+      "mask_frames": []
+    },
+    "coke_out_of_view": {
+      "file": "data/diagnostic/coke_out_of_view/clip.mp4",
+      "source": "POT-280 V27_6",
+      "frames": 500,
+      "annotated_corner_frames": 30,
+      "dropped_flagged_frames": [
+        48,
+        496
+      ],
+      "board_fraction_of_frame": {
+        "min": 0.0546,
+        "median": 0.1307,
+        "max": 0.1591
+      },
+      "factor": "exit",
+      "stages": [
+        2
+      ],
+      "geometry": {
+        "scale_range": [
+          0.945,
+          1.217
+        ],
+        "in_plane_rotation_deg": [
+          -9.1,
+          0.8
+        ],
+        "max_keystone": 1.178,
+        "max_affine_residual": 0.0241,
+        "max_affine_residual_frame": 218
+      },
+      "question": "Stage 2 stress clip (exit): the board leaves the frame and re-enters; HIDE / REINIT behaviour of the failure monitor (Question 3)",
+      "mask_frames": []
+    },
+    "coke_unconstrained": {
+      "file": "data/diagnostic/coke_unconstrained/clip.mp4",
+      "source": "POT-280 V27_7",
+      "frames": 500,
+      "annotated_corner_frames": 31,
+      "dropped_flagged_frames": [
+        192
+      ],
+      "board_fraction_of_frame": {
+        "min": 0.0069,
+        "median": 0.1496,
+        "max": 0.2499
+      },
+      "factor": "combined",
+      "stages": [
+        3
+      ],
+      "geometry": {
+        "scale_range": [
+          0.755,
+          1.331
+        ],
+        "in_plane_rotation_deg": [
+          -78.6,
+          80.3
+        ],
+        "max_keystone": 1.563,
+        "max_affine_residual": 0.0928,
+        "max_affine_residual_frame": 472
+      },
+      "question": "Stage 3 stress clip (combined): rotation, orbit, fast motion, exits and two blue-card crossings; six masks; the end-to-end run whose monitor timeline Question 3 uses",
+      "mask_frames": [
+        212,
+        216,
+        220,
+        304,
+        306,
+        314
+      ]
+    }
+  },
+  "notebook_subset": {
+    "step": 8,
+    "width": 640,
+    "note": "8 divides the corner stride 16, so every ground-truth frame is on the subset"
+  },
+  "personal_clips": {
+    "per_submission": 1,
+    "corner_frames": 10,
+    "masks": 5,
+    "masks_on_occluded_frames": 3,
+    "duration_s": [
+      5,
+      15
+    ],
+    "recommended_resolution": [
+      1280,
+      720
+    ],
+    "recommended_fps": 24
+  }
+}

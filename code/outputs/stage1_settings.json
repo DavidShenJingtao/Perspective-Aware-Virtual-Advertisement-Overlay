@@ -1,0 +1,76 @@
+{
+  "localisation": {
+    "detector": {
+      "sigma_w": 2.0,
+      "kappa": 0.05,
+      "response_fraction": 0.005,
+      "nms_mode": "radius",
+      "nms_radius": 5,
+      "max_corners": 600,
+      "border": 12
+    },
+    "descriptor": {
+      "patch_scale": 1.0,
+      "orientation_bins": 36,
+      "cells": 4,
+      "cell_bins": 8,
+      "gaussian_weighting": true,
+      "clamp": 0.2
+    },
+    "matcher": {
+      "ratio": 0.8,
+      "mutual": false
+    },
+    "ransac": {
+      "threshold": 9.0,
+      "confidence": 0.995,
+      "max_iterations": 2000,
+      "min_inliers": 12,
+      "seed": 0
+    },
+    "warp": {
+      "feather": 0,
+      "match_gain": false,
+      "reference_shape": null
+    },
+    "success_threshold": 0.02
+  },
+  "track": {
+    "variant": "flow_assisted",
+    "flow": {
+      "window": 7,
+      "iterations": 20,
+      "min_eigenvalue": 0.0002,
+      "max_residual": 0.08,
+      "convergence": 0.01,
+      "pyramid_levels": 1
+    },
+    "monitor": {
+      "min_inlier_count": 12,
+      "min_inlier_ratio": 0.4,
+      "max_median_residual": 3.0,
+      "max_corner_displacement": 60.0,
+      "max_mean_flow": 25.0,
+      "max_brightness_change": 0.15,
+      "hide_after_consecutive": 2
+    },
+    "reinit_every": 60,
+    "reinit_min_points": 20,
+    "propagate": "inliers"
+  },
+  "occlusion": {
+    "mode": "difference",
+    "strong": 0.25,
+    "weak": 0.12,
+    "min_area": 150,
+    "open_radius": 2,
+    "connectivity": 8,
+    "gain_quantile": 0.5,
+    "feather": 3
+  },
+  "composite": {
+    "feather": 3,
+    "match_gain": false
+  },
+  "resize_width": null
+}

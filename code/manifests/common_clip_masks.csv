@@ -1,0 +1,7 @@
+frame,frame_path,mask_path,split,foreground_pixels,occluder
+96,../../data/common_clip/frames/frame_000096.png,../../data/common_clip/masks/mask_000096.png,validation,38010,blue card
+144,../../data/common_clip/frames/frame_000144.png,../../data/common_clip/masks/mask_000144.png,test,59634,blue card
+192,../../data/common_clip/frames/frame_000192.png,../../data/common_clip/masks/mask_000192.png,validation,63664,blue card
+208,../../data/common_clip/frames/frame_000208.png,../../data/common_clip/masks/mask_000208.png,test,55633,blue card
+272,../../data/common_clip/frames/frame_000272.png,../../data/common_clip/masks/mask_000272.png,validation,26703,blue card
+448,../../data/common_clip/frames/frame_000448.png,../../data/common_clip/masks/mask_000448.png,test,30747,blue card

@@ -1,0 +1,56 @@
+{
+  "mode": "personal_clip_frames",
+  "clip_id": "<your clip id under data/personal/>",
+  "artwork": "../../data/artwork/<your_artwork>.png",
+  "reference": "../../data/personal/<clip_id>/reference.png",
+  "frames": {
+    "clean": null,
+    "occluded": null,
+    "perspective": null,
+    "pair": [
+      null,
+      null
+    ],
+    "note": "Audit frames of your clip (inside your cut if you cut it): one with nothing in front of the board, one with the occluder on the board (a mask frame), the one with the strongest perspective, and one consecutive pair (f, f+1) for the temporal terms. Fill in the frame indices and model.interval before the first generation. The three named frames must be distinct and have audit corners; the occluded frame also needs an audit mask. Choose a pair mapping to distinct output frames at the model frame rate. Use the same full audit dictionary for classical and generative temporal interpolation."
+  },
+  "model": {
+    "requirement": "One open-weight video model generates the edited pixels directly. Inference scripts are permitted. One attempt, fixed settings/seed across duration-limited segments; log every segment and technical retry.",
+    "examples": "Use an open-weight video model your hardware supports, for example MiniMax-H3 (MiniMax, 2026, https://huggingface.co/MiniMaxAI/MiniMax-H3), JoyAI-Video-Edit (JD Open Source, 2026, https://github.com/jd-opensource/JoyAI-Video-Edit), LTX-2.3 (Lightricks, 2026, in/outpainting IC-LoRA) or Wan2.1-VACE-14B (Wan, arXiv:2503.20314; VACE, Jiang et al., arXiv:2503.07598); other open-weight models are equally welcome. Wan2.1-VACE-1.3B (Apache 2.0) is a smaller option; memory depends on settings (staff trial: 14 GB, 13 min for a 5.5 s cut at 480p, mask + reference image). The staff example with MiniMax-H3 is in data/genai_oracle/.",
+    "name": "<model name and visible version>",
+    "interval": {
+      "start": null,
+      "end": null,
+      "note": "leave empty to give the model the whole clip; if the model does not accept a clip this long, the first and last frame of your cut (it must contain the clean / occluded / perspective / pair frames). If you split the clip into consecutive segments instead, run each with the same settings, join the outputs in order into output.mp4, and list the segments in notes."
+    },
+    "output_fps": null,
+    "output": "outputs/genai/output.mp4 (the model's video) + outputs/genai/frame_XXXXXX.png (audit frames extracted at their source time, original indices)",
+    "seed": null
+  },
+  "prompt": {
+    "inputs": [
+      "your clip (or your cut of it)",
+      "artwork",
+      "board masks from your frozen pipeline (only if the model needs a mask)"
+    ],
+    "template": "Replace the advertisement on the board in this video with the attached artwork."
+  },
+  "evaluation": "python -m overlaylab.evaluate --frames outputs/genai/frame_*.png --clip <clip_id> --artwork <your_artwork>",
+  "declaration": "model name and visible version, date, settings (steps, resolution, seed), the video you gave it (whole clip, cut, or joined segments), output fps, prompt, time, compute",
+  "log_fields": [
+    "date",
+    "model",
+    "visible_version",
+    "settings",
+    "seed",
+    "interval",
+    "output_fps",
+    "prompt",
+    "inputs",
+    "input_resolution",
+    "output_resolution",
+    "processing_time_s",
+    "compute",
+    "output_path",
+    "notes"
+  ]
+}
