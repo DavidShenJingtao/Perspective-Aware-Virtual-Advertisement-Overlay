@@ -62,7 +62,7 @@
     "mode": "difference",
     "strong": 0.25,
     "weak": 0.12,
-    "min_area": 150,
+    "min_area": 152,
     "open_radius": 2,
     "connectivity": 8,
     "gain_quantile": 0.5,

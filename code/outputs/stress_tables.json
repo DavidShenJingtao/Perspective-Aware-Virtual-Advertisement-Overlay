@@ -1,0 +1,934 @@
+{
+  "artwork": "ad",
+  "thresholds": "D:\\study\\courses\\2627Sem1\\CS4243\\lab\\lab2\\Perspective-Aware-Virtual-Advertisement-Overlay\\code\\outputs\\thresholds.json",
+  "width": null,
+  "success_threshold": 0.01,
+  "tables": {
+    "1": [
+      {
+        "label": "common \u00b7 validation",
+        "clip_id": "common_clip",
+        "n": 13,
+        "median_error": 0.004307702858685346,
+        "p90_error": 0.00564472356914059,
+        "success": 0.8461538461538461,
+        "failed": 2,
+        "median_inliers": 96.0,
+        "median_inlier_ratio": 0.8421052631578947,
+        "affine_median_error": 0.007085677837811414,
+        "affine_success": 0.5384615384615384,
+        "per_frame": {
+          "0": {
+            "error": 0.0025289462469967024,
+            "affine_error": 0.006981968411458427,
+            "inliers": 109,
+            "inlier_ratio": 0.8515625
+          },
+          "32": {
+            "error": 0.004383208491056821,
+            "affine_error": 0.007085677837811414,
+            "inliers": 37,
+            "inlier_ratio": 0.6491228070175439
+          },
+          "80": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 9,
+            "inlier_ratio": 0.5
+          },
+          "112": {
+            "error": 0.0023757308098386405,
+            "affine_error": 0.005466826942615545,
+            "inliers": 96,
+            "inlier_ratio": 0.8421052631578947
+          },
+          "144": {
+            "error": 0.00610135224105661,
+            "affine_error": 0.028489752307209817,
+            "inliers": 97,
+            "inlier_ratio": 0.8220338983050848
+          },
+          "176": {
+            "error": 0.005210428591500679,
+            "affine_error": 0.013272930519987462,
+            "inliers": 73,
+            "inlier_ratio": 0.8902439024390244
+          },
+          "208": {
+            "error": 0.00564472356914059,
+            "affine_error": 0.009177512821328528,
+            "inliers": 113,
+            "inlier_ratio": 0.8625954198473282
+          },
+          "240": {
+            "error": 0.0029369680105794014,
+            "affine_error": 0.006375974342203841,
+            "inliers": 18,
+            "inlier_ratio": 0.6206896551724138
+          },
+          "272": {
+            "error": 0.004307702858685346,
+            "affine_error": 0.014206331928249319,
+            "inliers": 143,
+            "inlier_ratio": 0.8881987577639752
+          },
+          "320": {
+            "error": 0.005042105511732912,
+            "affine_error": 0.012501334449633894,
+            "inliers": 48,
+            "inlier_ratio": 0.7272727272727273
+          },
+          "384": {
+            "error": 0.0031602049402036287,
+            "affine_error": 0.00657746326230546,
+            "inliers": 217,
+            "inlier_ratio": 0.8966942148760331
+          },
+          "416": {
+            "error": 0.002469417239746901,
+            "affine_error": 0.006656638915898099,
+            "inliers": 186,
+            "inlier_ratio": 0.9073170731707317
+          },
+          "448": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 10,
+            "inlier_ratio": 0.45454545454545453
+          }
+        }
+      },
+      {
+        "label": "common \u00b7 test",
+        "clip_id": "common_clip",
+        "n": 13,
+        "median_error": 0.003615739663133569,
+        "p90_error": 0.005236847314811835,
+        "success": 0.9230769230769231,
+        "failed": 1,
+        "median_inliers": 98.0,
+        "median_inlier_ratio": 0.8861788617886179,
+        "affine_median_error": 0.008702047704560059,
+        "affine_success": 0.6153846153846154,
+        "per_frame": {
+          "16": {
+            "error": 0.005299210936831037,
+            "affine_error": 0.008302877593792704,
+            "inliers": 98,
+            "inlier_ratio": 0.8990825688073395
+          },
+          "48": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.4
+          },
+          "96": {
+            "error": 0.004675574716639017,
+            "affine_error": 0.016294125298491804,
+            "inliers": 142,
+            "inlier_ratio": 0.8987341772151899
+          },
+          "128": {
+            "error": 0.003488463248831912,
+            "affine_error": 0.022869936576196712,
+            "inliers": 136,
+            "inlier_ratio": 0.8947368421052632
+          },
+          "160": {
+            "error": 0.0037430160774352263,
+            "affine_error": 0.0049670070608568645,
+            "inliers": 79,
+            "inlier_ratio": 0.8777777777777778
+          },
+          "192": {
+            "error": 0.004531479983962143,
+            "affine_error": 0.01132402292108365,
+            "inliers": 251,
+            "inlier_ratio": 0.9261992619926199
+          },
+          "224": {
+            "error": 0.002592576896037701,
+            "affine_error": 0.009441969131115092,
+            "inliers": 218,
+            "inlier_ratio": 0.8861788617886179
+          },
+          "256": {
+            "error": 0.004024530416143547,
+            "affine_error": 0.012069201549621773,
+            "inliers": 181,
+            "inlier_ratio": 0.9141414141414141
+          },
+          "288": {
+            "error": 0.0026330654564968815,
+            "affine_error": 0.009101217815327413,
+            "inliers": 70,
+            "inlier_ratio": 0.8641975308641975
+          },
+          "368": {
+            "error": 0.005482277822764954,
+            "affine_error": 0.006301983530109782,
+            "inliers": 46,
+            "inlier_ratio": 0.7076923076923077
+          },
+          "400": {
+            "error": 0.0024013218634928693,
+            "affine_error": 0.003991611911210185,
+            "inliers": 237,
+            "inlier_ratio": 0.9221789883268483
+          },
+          "432": {
+            "error": 0.002203771414406968,
+            "affine_error": 0.004161822965154069,
+            "inliers": 82,
+            "inlier_ratio": 0.82
+          },
+          "464": {
+            "error": 0.0025511712652277804,
+            "affine_error": 0.004437139653093503,
+            "inliers": 36,
+            "inlier_ratio": 0.6792452830188679
+          }
+        }
+      },
+      {
+        "label": "viewpoint (coke_perspective)",
+        "clip_id": "coke_perspective",
+        "n": 32,
+        "median_error": 0.004347573378892362,
+        "p90_error": 0.00817111892283821,
+        "success": 0.59375,
+        "failed": 12,
+        "median_inliers": 23.5,
+        "median_inlier_ratio": 0.6402691511387164,
+        "affine_median_error": 0.03251211808970471,
+        "affine_success": 0.0625,
+        "per_frame": {
+          "0": {
+            "error": 0.002661530730832888,
+            "affine_error": 0.008864205764574801,
+            "inliers": 73,
+            "inlier_ratio": 0.7934782608695652
+          },
+          "16": {
+            "error": 0.0029238053570157744,
+            "affine_error": 0.007962646492210807,
+            "inliers": 41,
+            "inlier_ratio": 0.7592592592592593
+          },
+          "32": {
+            "error": 0.0042541984433851175,
+            "affine_error": 0.013924844083710808,
+            "inliers": 56,
+            "inlier_ratio": 0.7368421052631579
+          },
+          "48": {
+            "error": 0.003715911287549797,
+            "affine_error": 0.022256980526112517,
+            "inliers": 62,
+            "inlier_ratio": 0.8611111111111112
+          },
+          "64": {
+            "error": 0.004440948314399606,
+            "affine_error": 0.035122658623797924,
+            "inliers": 58,
+            "inlier_ratio": 0.7945205479452054
+          },
+          "80": {
+            "error": 0.0030486851336003823,
+            "affine_error": 0.037076686653622466,
+            "inliers": 99,
+            "inlier_ratio": 0.853448275862069
+          },
+          "96": {
+            "error": 0.008032268009049636,
+            "affine_error": 0.028358196273559358,
+            "inliers": 66,
+            "inlier_ratio": 0.75
+          },
+          "112": {
+            "error": 0.0036031531177038653,
+            "affine_error": 0.013347049132962866,
+            "inliers": 46,
+            "inlier_ratio": 0.6764705882352942
+          },
+          "128": {
+            "error": 0.0025448084916088183,
+            "affine_error": 0.02136913025861926,
+            "inliers": 109,
+            "inlier_ratio": 0.8650793650793651
+          },
+          "144": {
+            "error": 0.0038818682013010484,
+            "affine_error": 0.029901577555611493,
+            "inliers": 35,
+            "inlier_ratio": 0.7
+          },
+          "160": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 6,
+            "inlier_ratio": 0.35294117647058826
+          },
+          "176": {
+            "error": 0.005104448434385969,
+            "affine_error": 0.06023740788744614,
+            "inliers": 44,
+            "inlier_ratio": 0.6376811594202898
+          },
+          "192": {
+            "error": 0.00496715704837191,
+            "affine_error": 0.07247714864729621,
+            "inliers": 68,
+            "inlier_ratio": 0.6355140186915887
+          },
+          "208": {
+            "error": 0.007422402159067589,
+            "affine_error": 0.09044784469469912,
+            "inliers": 19,
+            "inlier_ratio": 0.6129032258064516
+          },
+          "224": {
+            "error": 0.01006407289488122,
+            "affine_error": 0.0937090143939952,
+            "inliers": 19,
+            "inlier_ratio": 0.4318181818181818
+          },
+          "240": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 8,
+            "inlier_ratio": 0.5
+          },
+          "256": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.4
+          },
+          "272": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 6,
+            "inlier_ratio": 0.2727272727272727
+          },
+          "288": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.2857142857142857
+          },
+          "304": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 5,
+            "inlier_ratio": 0.25
+          },
+          "320": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5714285714285714
+          },
+          "336": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 6,
+            "inlier_ratio": 0.2727272727272727
+          },
+          "352": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 1.0
+          },
+          "368": {
+            "error": 0.00942077714693536,
+            "affine_error": 0.08273216386846402,
+            "inliers": 22,
+            "inlier_ratio": 0.5365853658536586
+          },
+          "384": {
+            "error": 0.006624439870207515,
+            "affine_error": 0.06904902398552147,
+            "inliers": 25,
+            "inlier_ratio": 0.6097560975609756
+          },
+          "400": {
+            "error": 0.005384902791883627,
+            "affine_error": 0.06346374150200004,
+            "inliers": 94,
+            "inlier_ratio": 0.7966101694915254
+          },
+          "416": {
+            "error": 0.003988655000790004,
+            "affine_error": 0.038836121406511055,
+            "inliers": 19,
+            "inlier_ratio": 0.4418604651162791
+          },
+          "432": {
+            "error": 0.0031725076260821442,
+            "affine_error": 0.02711501996087471,
+            "inliers": 110,
+            "inlier_ratio": 0.859375
+          },
+          "448": {
+            "error": 0.0046420808713361775,
+            "affine_error": 0.014390108441022415,
+            "inliers": 40,
+            "inlier_ratio": 0.7843137254901961
+          },
+          "464": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.4444444444444444
+          },
+          "480": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.6666666666666666
+          },
+          "496": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 9,
+            "inlier_ratio": 0.6428571428571429
+          }
+        }
+      },
+      {
+        "label": "scale (coke_scale)",
+        "clip_id": "coke_scale",
+        "n": 32,
+        "median_error": 0.003219327123709228,
+        "p90_error": 0.006457193501269106,
+        "success": 0.25,
+        "failed": 24,
+        "median_inliers": 4.0,
+        "median_inlier_ratio": 0.5,
+        "affine_median_error": 0.006493097354360277,
+        "affine_success": 0.1875,
+        "per_frame": {
+          "0": {
+            "error": 0.0036838999700008093,
+            "affine_error": 0.010449610542168527,
+            "inliers": 41,
+            "inlier_ratio": 0.640625
+          },
+          "16": {
+            "error": 0.006123806426103666,
+            "affine_error": 0.011208014602139807,
+            "inliers": 40,
+            "inlier_ratio": 0.5970149253731343
+          },
+          "32": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 10,
+            "inlier_ratio": 0.38461538461538464
+          },
+          "48": {
+            "error": 0.0033938210183707363,
+            "affine_error": 0.006057905124262729,
+            "inliers": 41,
+            "inlier_ratio": 0.7068965517241379
+          },
+          "64": {
+            "error": 0.007235096676655135,
+            "affine_error": 0.007200513486697576,
+            "inliers": 22,
+            "inlier_ratio": 0.55
+          },
+          "80": {
+            "error": 0.0022275507552903854,
+            "affine_error": 0.004707399372763905,
+            "inliers": 155,
+            "inlier_ratio": 0.8857142857142857
+          },
+          "96": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 5,
+            "inlier_ratio": 0.5
+          },
+          "112": {
+            "error": 0.0022799491324616023,
+            "affine_error": 0.0057651335799457585,
+            "inliers": 178,
+            "inlier_ratio": 0.8944723618090452
+          },
+          "128": {
+            "error": 0.003044833229047719,
+            "affine_error": 0.006928289584457826,
+            "inliers": 95,
+            "inlier_ratio": 0.8482142857142857
+          },
+          "144": {
+            "error": 0.0027192432726235566,
+            "affine_error": 0.0026551597547305444,
+            "inliers": 26,
+            "inlier_ratio": 0.6190476190476191
+          },
+          "160": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 0,
+            "inlier_ratio": 0.0
+          },
+          "176": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 6,
+            "inlier_ratio": 0.42857142857142855
+          },
+          "192": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.36363636363636365
+          },
+          "208": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 7,
+            "inlier_ratio": 0.2916666666666667
+          },
+          "224": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5714285714285714
+          },
+          "240": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.26666666666666666
+          },
+          "256": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.36363636363636365
+          },
+          "272": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 5,
+            "inlier_ratio": 0.2
+          },
+          "288": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.6666666666666666
+          },
+          "304": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5
+          },
+          "320": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5
+          },
+          "336": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.4444444444444444
+          },
+          "352": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5714285714285714
+          },
+          "368": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5
+          },
+          "384": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5
+          },
+          "400": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.3076923076923077
+          },
+          "416": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.2857142857142857
+          },
+          "432": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 0,
+            "inlier_ratio": 0.0
+          },
+          "448": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5
+          },
+          "464": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.5
+          },
+          "480": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.3076923076923077
+          },
+          "496": {
+            "error": Infinity,
+            "affine_error": Infinity,
+            "inliers": 4,
+            "inlier_ratio": 0.23529411764705882
+          }
+        }
+      }
+    ],
+    "2": [
+      {
+        "label": "common \u00b7 validation \u00b7 independent",
+        "clip_id": "common_clip",
+        "variant": "independent",
+        "n": 13,
+        "median_error": 0.004307702858685346,
+        "p90_error": 0.00564472356914059,
+        "success": 0.8461538461538461,
+        "failed": 2,
+        "jitter_px": 6.31973211616488,
+        "drift_error": NaN,
+        "drift_frames": 0,
+        "longest_run": 16,
+        "frames_tracked": 455,
+        "frames_total": 500,
+        "localisations": 455,
+        "reinit": 114,
+        "hide": 45,
+        "per_frame": {
+          "0": 0.0025289462469967024,
+          "32": 0.004383208491056821,
+          "80": null,
+          "112": 0.0023757308098386405,
+          "144": 0.00610135224105661,
+          "176": 0.005210428591500679,
+          "208": 0.00564472356914059,
+          "240": 0.0029369680105794014,
+          "272": 0.004307702858685346,
+          "320": 0.005042105511732912,
+          "384": 0.0031602049402036287,
+          "416": 0.002469417239746901,
+          "448": null
+        }
+      },
+      {
+        "label": "common \u00b7 validation \u00b7 flow-assisted",
+        "clip_id": "common_clip",
+        "variant": "flow_assisted",
+        "n": 13,
+        "median_error": 0.0033595708087143985,
+        "p90_error": 0.00564472356914059,
+        "success": 0.8461538461538461,
+        "failed": 2,
+        "jitter_px": 6.328994103895306,
+        "drift_error": 0.0033595708087143985,
+        "drift_frames": 1,
+        "longest_run": 21,
+        "frames_tracked": 458,
+        "frames_total": 500,
+        "localisations": 158,
+        "reinit": 114,
+        "hide": 42,
+        "per_frame": {
+          "0": 0.0025289462469967024,
+          "32": 0.0034400516771815885,
+          "80": null,
+          "112": 0.0023757308098386405,
+          "144": 0.006446957074165749,
+          "176": 0.004947588924597667,
+          "208": 0.00564472356914059,
+          "240": 0.0029369680105794014,
+          "272": 0.0033595708087143985,
+          "320": 0.005042105511732912,
+          "384": 0.0030933102622634537,
+          "416": 0.0026526641300044142,
+          "448": null
+        }
+      },
+      {
+        "label": "common \u00b7 test \u00b7 independent",
+        "clip_id": "common_clip",
+        "variant": "independent",
+        "n": 13,
+        "median_error": 0.003615739663133569,
+        "p90_error": 0.005236847314811835,
+        "success": 0.9230769230769231,
+        "failed": 1,
+        "jitter_px": 6.31973211616488,
+        "drift_error": NaN,
+        "drift_frames": 0,
+        "longest_run": 16,
+        "frames_tracked": 455,
+        "frames_total": 500,
+        "localisations": 455,
+        "reinit": 114,
+        "hide": 45,
+        "per_frame": {
+          "16": 0.005299210936831037,
+          "48": null,
+          "96": 0.004675574716639017,
+          "128": 0.003488463248831912,
+          "160": 0.0037430160774352263,
+          "192": 0.004531479983962143,
+          "224": 0.002592576896037701,
+          "256": 0.004024530416143547,
+          "288": 0.0026330654564968815,
+          "368": 0.005482277822764954,
+          "400": 0.0024013218634928693,
+          "432": 0.002203771414406968,
+          "464": 0.0025511712652277804
+        }
+      },
+      {
+        "label": "common \u00b7 test \u00b7 flow-assisted",
+        "clip_id": "common_clip",
+        "variant": "flow_assisted",
+        "n": 13,
+        "median_error": 0.0037093031433733693,
+        "p90_error": 0.006884431419975949,
+        "success": 0.8461538461538461,
+        "failed": 1,
+        "jitter_px": 6.328994103895306,
+        "drift_error": 0.009987767393168865,
+        "drift_frames": 2,
+        "longest_run": 21,
+        "frames_tracked": 458,
+        "frames_total": 500,
+        "localisations": 158,
+        "reinit": 114,
+        "hide": 42,
+        "per_frame": {
+          "16": 0.01725461010848953,
+          "48": null,
+          "96": 0.004990104999532586,
+          "128": 0.0030544750089562343,
+          "160": 0.0037430160774352263,
+          "192": 0.0049423886593199275,
+          "224": 0.002592576896037701,
+          "256": 0.003675590209311513,
+          "288": 0.0033202762564148902,
+          "368": 0.005482277822764954,
+          "400": 0.0027209246778481994,
+          "432": 0.0028452022629298825,
+          "464": 0.0070402262641105036
+        }
+      },
+      {
+        "label": "blur (coke_blur) \u00b7 flow-assisted",
+        "clip_id": "coke_blur",
+        "variant": "flow_assisted",
+        "n": 32,
+        "median_error": 0.005440198992467263,
+        "p90_error": 0.006239605309384616,
+        "success": 0.09375,
+        "failed": 29,
+        "jitter_px": 3.6893614710201295,
+        "drift_error": NaN,
+        "drift_frames": 0,
+        "longest_run": 145,
+        "frames_tracked": 38,
+        "frames_total": 500,
+        "localisations": 20,
+        "reinit": 15,
+        "hide": 462,
+        "per_frame": {
+          "0": 0.003165594606549507,
+          "16": 0.006439456888613954,
+          "32": null,
+          "48": null,
+          "64": null,
+          "80": null,
+          "96": null,
+          "112": 0.005440198992467263,
+          "128": null,
+          "144": null,
+          "160": null,
+          "176": null,
+          "192": null,
+          "208": null,
+          "224": null,
+          "240": null,
+          "256": null,
+          "272": null,
+          "288": null,
+          "304": null,
+          "320": null,
+          "336": null,
+          "352": null,
+          "368": null,
+          "384": null,
+          "400": null,
+          "416": null,
+          "432": null,
+          "448": null,
+          "464": null,
+          "480": null,
+          "496": null
+        }
+      },
+      {
+        "label": "exit (coke_out_of_view) \u00b7 flow-assisted",
+        "clip_id": "coke_out_of_view",
+        "variant": "flow_assisted",
+        "n": 30,
+        "median_error": 0.0074860271031286,
+        "p90_error": 0.01672919240693428,
+        "success": 0.43333333333333335,
+        "failed": 8,
+        "jitter_px": 6.941023857500689,
+        "drift_error": NaN,
+        "drift_frames": 0,
+        "longest_run": 21,
+        "frames_tracked": 364,
+        "frames_total": 500,
+        "localisations": 205,
+        "reinit": 156,
+        "hide": 136,
+        "per_frame": {
+          "0": 0.011609822316618867,
+          "16": null,
+          "32": 0.007778938211418433,
+          "64": null,
+          "80": null,
+          "96": 0.01216778507347773,
+          "112": 0.003843638450088838,
+          "128": 0.007099698854528453,
+          "144": 0.00827949291748867,
+          "160": 0.0046721923420238965,
+          "176": 0.01819438762405139,
+          "192": 0.01450239395774118,
+          "208": 0.002205481364752911,
+          "224": null,
+          "240": 0.005764432413786253,
+          "256": 0.02327377042618786,
+          "272": 0.006263803806406518,
+          "288": 0.006441973039042095,
+          "304": 0.016976614456844615,
+          "320": 0.004715597898056594,
+          "336": 0.014253343102256887,
+          "352": 0.005199559128635366,
+          "368": null,
+          "384": 0.010767386736477017,
+          "400": null,
+          "416": 0.013366498904522756,
+          "432": null,
+          "448": null,
+          "464": 0.005059442572612933,
+          "480": 0.007193115994838767
+        }
+      }
+    ],
+    "3": [
+      {
+        "label": "common \u00b7 validation",
+        "clip_id": "common_clip",
+        "mask_frames": 3,
+        "iou": 0.9166605346339819,
+        "f1": 0.9564581129367481,
+        "mask_frames_scored": 3,
+        "mask_frames_hidden": [],
+        "mask_frames_missing": [],
+        "leakage": 0.015612594622250958,
+        "baseline_leakage": 0.963975870044136,
+        "false_occlusion": NaN,
+        "overlay_absent_frames": [],
+        "hidden_count": 0,
+        "missing_count": 0,
+        "absent_count": 0
+      },
+      {
+        "label": "common \u00b7 test",
+        "clip_id": "common_clip",
+        "mask_frames": 3,
+        "iou": 0.9435953709022706,
+        "f1": 0.9709743495966083,
+        "mask_frames_scored": 2,
+        "mask_frames_hidden": [
+          448
+        ],
+        "mask_frames_missing": [],
+        "leakage": 0.006095458359158812,
+        "baseline_leakage": 0.6174438057213824,
+        "false_occlusion": NaN,
+        "overlay_absent_frames": [
+          448
+        ],
+        "hidden_count": 1,
+        "missing_count": 0,
+        "absent_count": 1
+      },
+      {
+        "label": "combined (coke_unconstrained)",
+        "clip_id": "coke_unconstrained",
+        "mask_frames": 6,
+        "iou": 0.9347868590514408,
+        "f1": 0.9660582645208076,
+        "mask_frames_scored": 4,
+        "mask_frames_hidden": [
+          212,
+          314
+        ],
+        "mask_frames_missing": [],
+        "leakage": 0.002161243100817728,
+        "baseline_leakage": NaN,
+        "false_occlusion": NaN,
+        "overlay_absent_frames": [
+          212,
+          314
+        ],
+        "hidden_count": 2,
+        "missing_count": 0,
+        "absent_count": 2
+      },
+      {
+        "label": "viewpoint (coke_perspective)",
+        "clip_id": "coke_perspective",
+        "mask_frames": 3,
+        "iou": NaN,
+        "f1": NaN,
+        "mask_frames_scored": 0,
+        "mask_frames_hidden": [],
+        "mask_frames_missing": [],
+        "leakage": NaN,
+        "baseline_leakage": NaN,
+        "false_occlusion": 0.10650985637086552,
+        "overlay_absent_frames": [
+          288
+        ],
+        "hidden_count": 1,
+        "missing_count": 0,
+        "absent_count": 1
+      }
+    ]
+  }
+}

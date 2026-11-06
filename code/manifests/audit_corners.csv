@@ -1,0 +1,11 @@
+clip_id,frame,frame_path,annotator,x1,y1,x2,y2,x3,y3,x4,y4,annotated_before_inference
+my_clip,21,../../data/personal/my_clip/frames/frame_000021.png,Shen_Jingtao,84.000,57.000,869.000,60.000,853.000,570.000,140.000,584.000,yes
+my_clip,75,../../data/personal/my_clip/frames/frame_000075.png,Shen_Jingtao,169.000,92.000,795.000,94.000,786.000,504.000,205.000,516.000,yes
+my_clip,120,../../data/personal/my_clip/frames/frame_000120.png,Shen_Jingtao,240.000,95.000,842.000,95.000,831.000,496.000,272.000,505.000,yes
+my_clip,165,../../data/personal/my_clip/frames/frame_000165.png,Shen_Jingtao,272.000,82.000,876.000,89.000,858.000,486.000,297.000,503.000,yes
+my_clip,210,../../data/personal/my_clip/frames/frame_000210.png,Shen_Jingtao,78.000,58.000,754.000,81.000,738.000,488.000,120.000,550.000,yes
+my_clip,285,../../data/personal/my_clip/frames/frame_000285.png,Shen_Jingtao,98.000,47.000,740.000,88.000,719.000,478.000,129.000,581.000,yes
+my_clip,351,../../data/personal/my_clip/frames/frame_000351.png,Shen_Jingtao,190.000,91.000,807.000,137.000,769.000,521.000,198.000,613.000,yes
+my_clip,356,../../data/personal/my_clip/frames/frame_000356.png,Shen_Jingtao,187.000,91.000,811.000,137.000,773.000,526.000,198.000,595.000,yes
+my_clip,360,../../data/personal/my_clip/frames/frame_000360.png,Shen_Jingtao,187.000,91.000,812.000,138.000,781.000,499.000,201.000,520.000,yes
+my_clip,390,../../data/personal/my_clip/frames/frame_000390.png,Shen_Jingtao,205.000,94.000,845.000,137.000,808.000,541.000,213.000,643.000,yes
