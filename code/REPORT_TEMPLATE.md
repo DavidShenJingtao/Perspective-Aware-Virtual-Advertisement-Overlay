@@ -22,8 +22,24 @@ This compact report records how every `YOUR CODE HERE` section is exercised. Ela
 <!-- hysteresis, compensated_difference, occlusion_mask, select_difference_thresholds, composite; frozen difference thresholds; no-occlusion baseline -->
 ### Stress table (Stage 3)
 <!-- generated rows: common · validation / test, combined, viewpoint — mask IoU / F1 / leakage, baseline leakage (common), false occlusion (viewpoint) -->
+| row | eligible masks | scored masks | hidden masks | missing masks | overlay absent | IoU | F1 | leakage | baseline leakage | false occlusion |
+|---|---|---|---|---|---|---|---|---|---|---|
+| common · validation | 3 | 3 | 0 | 0 | 0 | 0.917 | 0.956 | 1.56% | 96.40% | n/a |
+| common · test | 3 | 2 | 1 | 0 | 1 | 0.944 | 0.971 | 0.61% | 61.74% | n/a |
+| combined (coke_unconstrained) | 6 | 4 | 2 | 0 | 2 | 0.935 | 0.966 | 0.22% | n/a | n/a |
+| viewpoint (coke_perspective) | 3 | 0 | 1 | 0 | 1 | n/a | n/a | n/a | n/a | 10.65% |
+
+IoU / F1 from the occlusion masks saved by `run_pipeline` on the ground-truth mask frames (frames on which the overlay is hidden are not scored); leakage, baseline leakage and false occlusion from `overlaylab.evaluate` on the finished videos. The viewpoint clip has empty masks: only false occlusion applies.
+
+At full resolution, occlusion handling reduced finished-video foreground leakage from **96.40%** to **1.56%** on common validation and from **61.74%** to **0.61%** on common test. The common test mask IoU describes two scored frames, with one hidden. The combined clip achieved **0.935** IoU on four scored frames, with two hidden. There were no missing masks.
+
 ### Question 4 — Occlusion
 <!-- which occluders differencing recovers and which stay ambiguous; effect of the strong threshold and the minimum area; why hysteresis matters for thin occluders and why opening works against it (thinnest occluder that survives the frozen open_radius; what the radius buys over radius 0 on the validation masks); why the viewpoint clip produces false occlusion under strong perspective with a correct homography, and which part of the differencing is responsible -->
+1. **Which occluders are recovered, and which remain ambiguous?**
+The blue card is recovered where its colour contrasts with the poster. An occluder coloured like the board is ambiguous and can be missed. A shadow or specular highlight can be mistaken for foreground because it changes the board’s appearance. An occluder that stops moving remains detectable if it contrasts with the board, since each frame is compared with the clean reference.
+2. **What happens when the strong threshold or minimum component area is raised?** On common validation frame 192 in section 5 of notebook 3, raising the strong threshold from **0.25** to **0.375** or the minimum area from **38** to **228** pixels kept the mask at **15997** pixels and alpha leakage at **0.1%**. Enough strong seeds remained to recover the same region, and the card component exceeded both area cutoffs. Higher cutoffs can increase leakage if they remove genuine foreground.
+3. **Why does hysteresis help thin occluders, and why does opening work against it?** Hysteresis retains weak pixels connected to a strong seed, which helps preserve faint sections of a thin occluder such as a pole. On common validation frame 192, disabling hysteresis shrank the mask from **15997** to **9525** pixels and raised alpha leakage from **0.1%** to **29.0%**. Opening erodes the mask with a disc and then dilates what survives. During erosion, a pixel survives only if the entire disc centred on it fits inside the foreground. If the disc cannot fit anywhere within a thin component, erosion removes it entirely and dilation cannot restore it. With the frozen radius of 2 pixels (Section 3), the thinnest horizontal strip to survive a separate synthetic check was 5 pixels wide.
+4. **Why does the viewpoint clip produce false occlusion even with a correct homography?** A correct homography aligns the board geometrically. Under strong foreshortening, however, fine texture can be sampled or blurred differently in the captured frame and the warped reference. The global gain and offset cannot account for these local changes. The compensated per-pixel colour difference can therefore exceed the foreground thresholds even where the board is unobstructed. In Notebook 3, Section 6, viewpoint frame 288 has a ground-truth occlusion mask. Even with the evaluation-only ground-truth homography, the algorithm falsely masks **2.7%** of the visible board. The full-resolution stress table reports **10.65%** false occlusion rate using a separate finished-video coverage proxy over two empty-mask frames with detected overlays.
 
 ## Stage 4 — Your clip
 ### Capture and audit
