@@ -1,15 +1,15 @@
 {
   "mode": "personal_clip_frames",
-  "clip_id": "<your clip id under data/personal/>",
-  "artwork": "../../data/artwork/<your_artwork>.png",
-  "reference": "../../data/personal/<clip_id>/reference.png",
+  "clip_id": "my_clip",
+  "artwork": "../../data/artwork/my_artwork.png",
+  "reference": "../../data/personal/my_clip/reference.png",
   "frames": {
-    "clean": null,
-    "occluded": null,
-    "perspective": null,
+    "clean": 210,
+    "occluded": 356,
+    "perspective": 285,
     "pair": [
-      null,
-      null
+      315,
+      316
     ],
     "note": "Audit frames of your clip (inside your cut if you cut it): one with nothing in front of the board, one with the occluder on the board (a mask frame), the one with the strongest perspective, and one consecutive pair (f, f+1) for the temporal terms. Fill in the frame indices and model.interval before the first generation. The three named frames must be distinct and have audit corners; the occluded frame also needs an audit mask. Choose a pair mapping to distinct output frames at the model frame rate. Use the same full audit dictionary for classical and generative temporal interpolation."
   },
