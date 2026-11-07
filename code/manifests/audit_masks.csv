@@ -1,0 +1,6 @@
+clip_id,frame,frame_path,mask_path,annotator,occluder,annotated_before_inference
+my_clip,21,../../data/personal/my_clip/frames/frame_000021.png,../../data/personal/my_clip/masks/mask_000021.png,Shen_Jingtao,none,yes
+my_clip,285,../../data/personal/my_clip/frames/frame_000285.png,../../data/personal/my_clip/masks/mask_000285.png,Shen_Jingtao,none,yes
+my_clip,351,../../data/personal/my_clip/frames/frame_000351.png,../../data/personal/my_clip/masks/mask_000351.png,Shen_Jingtao,arm,yes
+my_clip,356,../../data/personal/my_clip/frames/frame_000356.png,../../data/personal/my_clip/masks/mask_000356.png,Shen_Jingtao,arm,yes
+my_clip,360,../../data/personal/my_clip/frames/frame_000360.png,../../data/personal/my_clip/masks/mask_000360.png,Shen_Jingtao,arm,yes
