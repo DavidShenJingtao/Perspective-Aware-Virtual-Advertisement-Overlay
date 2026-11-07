@@ -16,15 +16,15 @@
   "model": {
     "requirement": "One open-weight video model generates the edited pixels directly. Inference scripts are permitted. One attempt, fixed settings/seed across duration-limited segments; log every segment and technical retry.",
     "examples": "Use an open-weight video model your hardware supports, for example MiniMax-H3 (MiniMax, 2026, https://huggingface.co/MiniMaxAI/MiniMax-H3), JoyAI-Video-Edit (JD Open Source, 2026, https://github.com/jd-opensource/JoyAI-Video-Edit), LTX-2.3 (Lightricks, 2026, in/outpainting IC-LoRA) or Wan2.1-VACE-14B (Wan, arXiv:2503.20314; VACE, Jiang et al., arXiv:2503.07598); other open-weight models are equally welcome. Wan2.1-VACE-1.3B (Apache 2.0) is a smaller option; memory depends on settings (staff trial: 14 GB, 13 min for a 5.5 s cut at 480p, mask + reference image). The staff example with MiniMax-H3 is in data/genai_oracle/.",
-    "name": "<model name and visible version>",
+    "name": "Wan-AI/Wan2.1-VACE-1.3B",
     "interval": {
-      "start": null,
-      "end": null,
+      "start": 208,
+      "end": 359,
       "note": "leave empty to give the model the whole clip; if the model does not accept a clip this long, the first and last frame of your cut (it must contain the clean / occluded / perspective / pair frames). If you split the clip into consecutive segments instead, run each with the same settings, join the outputs in order into output.mp4, and list the segments in notes."
     },
-    "output_fps": null,
+    "output_fps": 16,
     "output": "outputs/genai/output.mp4 (the model's video) + outputs/genai/frame_XXXXXX.png (audit frames extracted at their source time, original indices)",
-    "seed": null
+    "seed": 42
   },
   "prompt": {
     "inputs": [
