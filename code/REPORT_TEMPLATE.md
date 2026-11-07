@@ -102,8 +102,41 @@ The arm covers part of the print. The match panel shows **19 candidate matches**
 
 ### Generative comparison
 <!-- the open-weight video model you chose (direct pixel generation; inference scripts permitted), its settings, the video you gave it (whole clip, a cut, or joined segments), and why (cite the model); the seed, the log, the overlaylab.evaluate --frames report, comparison table against the classical output on the same frames, [AI-GENERATION] markers -->
+We used the open-weight **Wan2.1-VACE-1.3B** model because it has lower memory and computational costs. The input was a cut of `my_clip` spanning source frames **208–359**, resampled to **81 frames at 16 fps**, together with `my_artwork.png`. We supplied no explicit mask and used the prompt “Replace the advertisement on the board in this video with the attached artwork.” The run used seed **42**, **50 UniPC steps**, shift **16**, guidance **5.0**, and bfloat16 on one **NVIDIA H100 NVL**. After a decoder dependency failure, we retried with the same inputs and settings. The successful run produced an **832 × 480** video at **16 fps** in **288.651 s**. [Wan model card](https://huggingface.co/Wan-AI/Wan2.1-VACE-1.3B) · [VACE paper](https://arxiv.org/abs/2503.07598)
+
+We compared the generated video and both classical variants on the same source frames. These were **210** (clean), **285** (strongest perspective), **356** (occluded), and **315–316** (temporal pair). Placement and fidelity use the three corner-annotated frames. The generated frames were extracted at the corresponding source times and resized for evaluation. 
+
+| Measure | Independent | Flow-assisted | Wan VACE [AI-GENERATION] |
+|---|---:|---:|---:|
+| Placement success at 1% | 2/3 (67%) | 2/3 (67%) | 0/3 (0%) |
+| Median corner error on detected frames | 0.69% | 0.69% | n/a |
+| Rectified artwork NCC / SSIM / structure | 0.569 / 0.476 / 0.293 | 0.569 / 0.476 / 0.293 | 0.122 / 0.265 / 0.020 |
+| Flicker / warping error on frames 315–316 | 0.0997 / 0.0961 | 0.0997 / 0.0961 | 0.0302 / 0.0165 |
+| Background PSNR / SSIM | 34.49 dB / 0.989 | 34.49 dB / 0.989 | 14.50 dB / 0.875 |
+| Background drift | 4.73 px | 4.73 px | 299.35 px |
+| Foreground leakage proxy on frame 356 | 0.0% | 0.0% | 99.9% |
+| Visible-board coverage | 97.3% on 1 of 2 mask frames | 97.3% on 1 of 2 mask frames | n/a, 0 of 2 mask frames scored |
+| Processing time / compute | 198.742 s / CPU | 249.394 s / CPU | 288.651 s / H100 NVL |
+
+The classical times cover tracking and compositing on the full 411-frame clip. Wan’s time covers the successful generation on the shorter cut.
+
+| Audit frame | Independent output | Wan output [AI-GENERATION] |
+|---|---|---|
+| **285 — strongest perspective** | ![Classical overlay follows the board in frame 285](outputs/genai/classical_independent/frame_000285.png) | ![AI-GENERATION: Wan recolours the print and adjacent display in frame 285](outputs/genai/frame_000285.png) |
+| **356 — arm crossing** | ![Classical pipeline hides the overlay at frame 356](outputs/genai/classical_independent/frame_000356.png) | ![AI-GENERATION: Wan retains the arm silhouette but changes its colour in frame 356](outputs/genai/frame_000356.png) |
+
+
 ### Question 5 — Reflection
 <!-- classical vs your generative model on your clip: geometric placement, artwork identity, occlusion order, background preservation (what the background PSNR says about generated vs composited pixels); controllability, cost; what the model generated outside the board and in front of it; whether it kept the clip's timing (compare with the staff MiniMax-H3 example in data/genai_oracle/) -->
+**Geometric placement and artwork identity.** Both classical variants followed the board’s perspective, with corner errors of **0.71% on frame 210** and **0.67% on frame 285**. Wan kept a recognisable frame around the print, but the result shows a blue-and-orange recolouring of the original picture. The supplied **“COLOUR & MOTION”** text and layout are missing. This agrees with the lower artwork NCC (**0.122** versus **0.569**) and structure score (**0.020** versus **0.293**). The evaluator found no artwork homography on any of the three placement frames, so Wan’s median corner error is unavailable.
+
+**Occlusion order and background preservation.** Neither method delivered the intended artwork behind the arm on frame **356**. Both classical variants hid the overlay after localisation failed, leaving the arm and original print visible. This explains their **0% leakage** and why the reported **97.3% coverage** comes from clean frame 285 alone. Wan still shows the arm in front, but recolours it. Its **99.9% leakage** measures changed pixels inside the arm annotation, which can include recolouring. The evaluator recovered no artwork on either mask frame, so Wan’s visible-board coverage is unavailable. Wan also changed the adjacent display, which appears bright red in frame 285. Its **14.50 dB** background PSNR and **0.875** SSIM reflect those broader changes. The classical compositor copies pixels outside its predicted overlay region before encoding, and its finished-video background scores were **34.49 dB** and **0.989**.
+
+**Timing.** Wan’s arm still crosses the board at the nominal audit time for frame **356**. Its lower flicker and warping error on **315–316** show less change on that one pair, while the artwork is still incorrect and recovered corner jitter is unavailable. The large background drift shows that some matched-time frames disagree strongly with the source. Since Wan also changed the background’s appearance, that metric alone cannot isolate how much of the disagreement came from retiming.
+
+**Controllability and cost.** In the classical pipeline, swapping the artwork changes the intended pixels directly, while the homography, mask, and failure monitor govern placement and visibility. Wan’s prompt and reference image specify the desired edit, but the model decides how to render it. This run required preparing the cut, transferring inputs, configuring the model, and spending **288.651 s on an H100**. The classical runs took **198.742 s** and **249.394 s** on CPU for the full clip. The different durations and hardware limit a direct speed comparison.
+
+**Staff comparison.** The staff MiniMax-H3 run on the common clip recovered the artwork on **100%** of its evaluated placement frames, with **0.32 NCC**, compared with **0% detection** and **0.122 NCC** for Wan on our clip. The staff run still had **20.04 dB** background PSNR, **264.89 px** background drift, and **8.3%** foreground leakage. Both runs show that reproducing an artwork and preserving the rest of the video are separate challenges. The clips and settings differ, so this comparison cannot isolate the effect of model size. These results describe one generation per setup. [AI-LANGUAGE][HUMAN-CHECK]
 
 ## Evidence table
 | Student file | Function | Report section | Notebook figure / table / video |
